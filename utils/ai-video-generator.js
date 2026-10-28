@@ -555,7 +555,10 @@ class AIVideoGenerator {
     }
 
     const { chromium } = require('playwright');
-    const browser = await chromium.launch();
+    // Optional override for machines whose preinstalled Chromium does not match
+    // the bundled Playwright version.
+    const executablePath = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined;
+    const browser = await chromium.launch({ executablePath });
     const slidesDir = path.join(path.dirname(outputPath), 'slides');
 
     try {
