@@ -58,5 +58,19 @@ module.exports = [
         caughtErrors: 'none'
       }]
     }
+  },
+  {
+    files: ['motion-studio/**/*.mjs'],
+    languageOptions: {
+      sourceType: 'module',
+      globals: { console: 'readonly', process: 'readonly', Buffer: 'readonly', URL: 'readonly', setTimeout: 'readonly', window: 'readonly' }
+    }
+  },
+  {
+    files: ['motion-studio/player/**/*.js'],
+    languageOptions: {
+      sourceType: 'module',
+      globals: { window: 'readonly', document: 'readonly' }
+    }
   }
 ];

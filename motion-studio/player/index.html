@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Motion Studio Player</title>
+<style>
+  @font-face { font-family: 'Display'; src: url('../fonts/archivo-black-latin-400-normal.woff2') format('woff2'); font-weight: 400; }
+  @font-face { font-family: 'UI'; src: url('../fonts/ibm-plex-mono-latin-500-normal.woff2') format('woff2'); font-weight: 500; }
+  @font-face { font-family: 'UI'; src: url('../fonts/ibm-plex-mono-latin-600-normal.woff2') format('woff2'); font-weight: 600; }
+  :root {
+    --paper: #ECE4D3;
+    --card: #F8F4EA;
+    --ink: #161412;
+    --grey: #8A8273;
+    --accent: #FFC929;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; transition: none !important; animation: none !important; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--paper); }
+  #stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: var(--paper); }
+  .sheet { position: absolute; inset: 0; background-color: var(--paper); overflow: hidden; visibility: hidden; will-change: transform; }
+  .sheet::before { content: ''; position: absolute; inset: 0; background-image: var(--fibers); opacity: .55; pointer-events: none; }
+  .sheet.edge { box-shadow: -28px 0 48px rgba(22, 20, 18, .28); }
+  .cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+  .abs { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  .disp { font-family: 'Display', sans-serif; color: var(--ink); line-height: .92; letter-spacing: -.01em; white-space: nowrap; }
+  .ui { font-family: 'UI', monospace; font-weight: 600; color: var(--ink); letter-spacing: .04em; white-space: pre; }
+  .card { background: var(--card); box-shadow: 0 18px 0 -6px rgba(22,20,18,.10), 0 24px 50px rgba(22,20,18,.22); }
+  .hl { position: absolute; background: var(--accent); transform-origin: 0 50%; mix-blend-mode: multiply; }
+  .strike { position: absolute; background: var(--ink); transform-origin: 0 50%; }
+  .stamp { border: 10px solid var(--ink); border-radius: 18px; padding: 10px 34px 18px; transform-origin: 50% 50%; }
+  #grain { position: absolute; inset: 0; width: 1920px; height: 1080px; pointer-events: none; mix-blend-mode: multiply; opacity: .22; z-index: 100; }
+  #vignette { position: absolute; inset: 0; pointer-events: none; z-index: 101;
+    background: radial-gradient(ellipse at 50% 46%, rgba(0,0,0,0) 58%, rgba(40,30,15,.20) 100%); }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script type="module" src="./film.js"></script>
+</body>
+</html>

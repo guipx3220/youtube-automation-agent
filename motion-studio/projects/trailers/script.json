@@ -1,0 +1,105 @@
+{
+  "title": "Como os trailers viraram o evento",
+  "bpm": 100,
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "voice": "Kore",
+  "segments": [
+    {
+      "id": "hook",
+      "text": "Duzentos e oitenta e nove milhões de visualizações em vinte e quatro horas. Não foi um filme. Foi um trailer.",
+      "cues": {
+        "ruler": { "at": "start", "beats": 4 },
+        "label": "vinte e quatro",
+        "notFilm": "Não foi",
+        "xmark": { "at": "notFilm", "beats": 1 },
+        "trailer": "Foi um trailer"
+      },
+      "sfx": { "ruler": "pop", "label": "marker", "notFilm": "pop", "xmark": "pop", "trailer": "hit" }
+    },
+    {
+      "id": "cinema",
+      "text": "Mas, no começo, quase ninguém ficava para ver. Por volta de 1913, os anúncios de filmes passavam depois da sessão.",
+      "cues": { "leave": "quase ninguém", "stamp": "1913", "after": "depois da sessão" },
+      "sfx": { "leave": "pop", "stamp": "stamp", "after": "marker" }
+    },
+    {
+      "id": "word",
+      "text": "Eles vinham atrás do filme principal. Em inglês, trail é seguir, vir atrás. Daí o nome: trailer.",
+      "cues": {
+        "caption": { "at": "start", "beats": 2 },
+        "card": "Em inglês",
+        "highlight": "vir atrás",
+        "merge": "Daí o nome",
+        "er": { "at": "merge", "beats": 2 },
+        "eq": { "at": "merge", "beats": 3 }
+      },
+      "sfx": { "caption": "pop", "card": "pop", "highlight": "marker", "merge": "hit", "er": "hit", "eq": "pop" }
+    },
+    {
+      "id": "psycho",
+      "text": "Em 1960, Alfred Hitchcock fez algo estranho. O trailer de Psicose é um passeio de mais de seis minutos pelos cenários, guiado por ele mesmo, sem nenhuma cena do filme.",
+      "cues": {
+        "name": { "at": "start", "beats": 2 },
+        "plan": "O trailer de Psicose",
+        "tour": "passeio",
+        "clock": "seis minutos",
+        "guide": "guiado",
+        "zero": "sem nenhuma"
+      },
+      "sfx": { "name": "type", "plan": "type", "tour": "pop", "clock": "pop", "guide": "pop", "zero": "stamp" }
+    },
+    {
+      "id": "jaws",
+      "text": "Em 1975, Tubarão mudou a estratégia: comerciais em massa na TV, em horário nobre, e estreia em centenas de cinemas ao mesmo tempo.",
+      "cues": {
+        "title": { "at": "start", "beats": 1 },
+        "tv4": "comerciais",
+        "tv16": "em massa",
+        "tv48": { "at": "tv16", "beats": 2 },
+        "prime": "horário nobre",
+        "cinemas": "centenas",
+        "cinemaLabel": { "at": "cinemas", "beats": 2 }
+      },
+      "sfx": { "title": "pop", "tv4": "pop", "tv16": "pop", "tv48": "pop", "prime": "marker", "cinemas": "pop", "cinemaLabel": "marker" }
+    },
+    {
+      "id": "starwars",
+      "text": "Em 1998, fãs compraram ingresso de outros filmes só para ver o trailer de Star Wars, Episódio Um. E muitos saíram antes do filme começar.",
+      "cues": {
+        "sub": { "at": "start", "beats": 1 },
+        "ticket": "compraram ingresso",
+        "reason": "só para ver",
+        "reasonHl": { "at": "reason", "beats": 3 },
+        "tear": "Star Wars",
+        "leave": "saíram antes",
+        "pile": "filme começar"
+      },
+      "sfx": { "sub": "pop", "ticket": "pop", "reason": "type", "reasonHl": "marker", "tear": "tear", "leave": "pop", "pile": "hit" }
+    },
+    {
+      "id": "today",
+      "text": "E hoje? O trailer de Vingadores: Ultimato, em 2018, teve duzentos e oitenta e nove milhões de visualizações no primeiro dia.",
+      "cues": {
+        "pan": "O trailer de Vingadores",
+        "phone": "em 2018",
+        "count": "duzentos",
+        "push": { "at": "count", "beats": 5 }
+      },
+      "sfx": { "pan": "pop", "phone": "pop", "count": "marker", "push": "hit" }
+    },
+    {
+      "id": "end",
+      "text": "O trailer deixou de anunciar o evento. Ele virou o evento.",
+      "cues": {
+        "l2": { "at": "start", "beats": 1 },
+        "l3": { "at": "start", "beats": 2 },
+        "strike": "Ele virou",
+        "slate": "virou o evento.$",
+        "endcard": { "at": "slate", "beats": 3 }
+      },
+      "sfx": { "l2": "pop", "l3": "pop", "strike": "hit", "slate": "marker", "endcard": "whoosh" }
+    }
+  ]
+}
