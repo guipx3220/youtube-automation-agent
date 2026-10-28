@@ -1,5 +1,6 @@
 const OpenAI = require('openai');
 const { Logger } = require('./logger');
+const { getContentLanguageInstruction } = require('./content-language');
 
 const GEMINI_MODELS = [
   'gemini-3.8-flash',
@@ -122,9 +123,11 @@ class AITextService {
     const model = options.model || this.model;
     const maxTokens = options.maxTokens || 2048;
     const temperature = options.temperature ?? 0.7;
+    const languageInstruction = getContentLanguageInstruction();
 
     if (this.gemini) {
       const config = { maxOutputTokens: maxTokens };
+      if (languageInstruction) config.systemInstruction = languageInstruction;
       if (!/^gemini-(?:3\.(?:[5-9]|\d{2,})|[4-9]|\d{2,})[.-]/.test(model)) config.temperature = temperature;
       let response = await this.gemini.models.generateContent({
         model,
@@ -158,7 +161,10 @@ class AITextService {
 
     const params = {
       model,
-      messages: [{ role: 'user', content: prompt }],
+      messages: [
+        ...(languageInstruction ? [{ role: 'system', content: languageInstruction }] : []),
+        { role: 'user', content: prompt }
+      ],
       temperature,
     };
 
